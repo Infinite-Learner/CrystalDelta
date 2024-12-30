@@ -12,9 +12,9 @@
         <div class="form-section">
             <h4><i class="fa-solid fa-bag-shopping"></i>shop<span>cart</span></h4>
             <h2>Create a Account</h2>
-            <form id = "loginform">
+            <form id = "registerForm">
                 <div class="form-group">
-                    <input type="text" id="text" name="username" placeholder="Username" required>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
                     <input type="email" id="email" name="email" placeholder="E-mail" required>
@@ -39,8 +39,7 @@
       const username = document.getElementById('username').value;
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-
-      fetch('http://localhost:3000/api/auth/signup', {
+      fetch('/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,15 +48,16 @@
       })
         .then(response => response.json())
         .then(data => {
-          if (data.message) {
-            alert(data.message);
+          if (data.success) {
+            alert('User registered successfully');
+            window.location.href = 'login';
+          } else {
+            alert('User registration failed');
           }
         })
-        .catch(err => {
-          document.getElementById('error').textContent = 'An error occurred during registration.';
-          console.error('Error:', err);
-        });
-    });
+        .catch(error => {
+          console.error('Error:', error);
+        });});
     </script>
 </body>
 </html>

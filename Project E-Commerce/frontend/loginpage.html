@@ -15,7 +15,7 @@
         <div class="form-section">
             <h4><i class="fa-solid fa-bag-shopping"></i>shop<span>cart</span></h4>
             <h2>Login</h2>
-            <form>
+            <form id="loginForm">
                 <div class="form-group">
                     <input type="email" id="email" name="email" placeholder="E-mail" required>
                 </div>
@@ -23,9 +23,36 @@
                     <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <button type="submit" class="login-button">Shopnow</button> <br>
-                <a href="signuppage.html">Don't have and account?<span><p> Register</p></span></a>
+                <a href="signup">Don't have and account?<span><p> Register</p></span></a>
             </form>
         </div>
+        <script>
+           
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                event.preventDefault(); 
     
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({email, password })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = 'home';  
+                        alert('Login Successful! :\nWelcome  ' + data.user.user_name);
+                        document.getElementByClass('user').innerHTML = data.user.user_name;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred');
+                });
+            });
+        </script>
 </body>
 </html>
