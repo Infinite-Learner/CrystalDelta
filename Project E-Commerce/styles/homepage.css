@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: 'poppins',sans-serif;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+header {
+    
+    color: black;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+header .location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .location span {
+    color: black;
+}
+
+header .user {
+    font-size: 1rem;
+}
+
+h4 i{
+    color: #e39b1e;
+    margin-right: 10px;
+}
+
+h4 span{
+    color: #444;
+    font-weight: 200;
+}
+
+.location button{
+    
+    background-color: #e39b1e;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.user{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.user i{
+    margin: 5px;
+    font-size: 21px;
+}
+
+span i{
+    color: black;
+}
+.search-bar {
+    /* margin: 20px 0px 26px 0px ; */
+    margin-bottom:45px ;
+   
+}
+
+.search-bar input {
+    width: 265%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    border-radius: 10px;
+    position: relative;
+    right: 175%;
+    bottom: 100%;
+}
+
+.search-bar i{
+    position: absolute;
+    bottom: 46%;
+    left: 64%;
+    color: gray;
+}
+
+
+.right-side{
+    position: absolute;
+    left: 90%;
+    bottom: 82.5%;   
+    float: right;
+}
+
+nav {
+    background-color:#FFF0DB;
+    padding: 10px;
+    margin-top: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    color: #444;
+    cursor: pointer;
+}
+
+.main {
+   margin: 20px;
+}
+
+.hot-deals {
+    margin: 1px 0px 50px 0px;
+    display: inline-block;
+    
+}
+
+.hot-deals h4 {
+    color: #444;
+    margin-left: 8px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+    bottom: 65%;
+}
+
+.hot-deals h4 span{
+    color: #e39b1e;
+    font-weight: bold;
+
+}
+
+.deals {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.deal-card {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.deal-card img {
+    height: 230px;
+    width: 600px;
+    border-radius: 5px;
+    position: absolute;
+    top: 40%;
+}
+
+/* 
+footer {
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    text-align: center;
+} */
+
+.product-detail{
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    top:170px;
+    left:45%;
+    border-bottom: dashed #e39b1e;
+    width: 110vh;
+
+}
+
+.card1{
+   position: absolute;
+   left: 60%;
+   bottom: 28%;
+}
+
+.card1 .card-text{
+    margin-left:20px;;
+}
+
+.card2{
+    position: absolute;
+    left: 72.5%;
+    bottom: 28%;
+
+}
+
+ 
+.card2 .card-text{
+    margin-left: 40px;
+}
+
+.card3{
+    position: absolute;
+    left: 87%;
+    bottom: 28%;
+}
+
+.card3 .card-img-top{
+    margin-bottom: 18px;
+    height: 150px;
+    width: 120px;
+}
+
+.card3 .card-text{
+    margin-left: 10px;
+}
+
+.card4{
+    margin-left: 46%;
+    margin-top:25px ;
+}
+
+.card4 .card-text{
+    margin-left: 20px;
+
+}
+
+.card-text span{
+    color: red;
+    background-color: aliceblue;
+    margin-left: 8px;
+    font-size: smaller;
+}
+
+.second-product p{
+    font-weight: bold;
+    font-size: 25px;
+    border-bottom: dashed #e39b1e;   
+}
+
+.second-product{
+    margin-top: 50px;
+    margin-left: 10px;
+    
+}
+
+.second-product-list{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.card5{
+    border: 2px solid aliceblue;
+    cursor: pointer;
+}
+
+.add-cart{
+    background-color: aliceblue;
+    /* margin-right: 42px; */
+    padding-top: 3px;
+    padding-bottom: 1px;
+    margin-left: 5px;
+    display: inline-block;
+
+}
+
+.add-cart button{
+    background-color: #e39b1e;
+    color: black;
+    border-radius: 8px;
+    border: none;
+    font-size: smaller;
+   
+}
+ 
+.card5 .card-text{
+    margin: 5px;
+}
+
+/* .card5:hover{
+    width: 13rem;
+    height: fit-content;
+} */
+
+.card6{
+    border: 2px solid aliceblue;
+    
+}
+
+.card6 .card-text span{
+    margin-left: 100px;
+}
+
+.card6 .card-text{
+    margin: 5px;
+}
+
+.card7 img{
+    height: 150px;
+    width: 200px;
+    margin-top: 30px;
+
+}
+
+.card7{
+    border: 2px solid aliceblue;
+    
+}
+
+.card7 .card-text{
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.card7 .add-cart{
+    margin-top: 10px;
+}
+.card8{
+    border: 2px solid aliceblue;
+    
+}
+
+.card8 .card-body{
+    margin-top: 13px;
+    margin-left: 5px;
+}
+
+.card8 .add-cart{
+    margin-top: 10px;
+}
+
+.card9{
+    border: 2px solid aliceblue;
+    
+}
+
+.card9  img{
+    height: 150px;
+    margin-top: 20px;
+}
+
+.card9 .card-body{
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.card10{
+    border: 2px solid aliceblue;
+    
+}
+
+.card10  img{
+    height: 150px;
+    margin-top: 20px;
+}
+
+.card10 .card-body{
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.card11  img{
+    height: 150px;
+    width: 240px;
+    margin-top: 20px;
+}
+
+.card11{
+    border: 2px solid aliceblue;
+    
+}
+
+.card11 .card-body{
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+/* Review Purchase*/
+
+.review{
+    margin-top: 20px;
+}
+
+.review p{
+    font-weight: bold;
+    font-size: 25px;
+    border-bottom: dashed #e39b1e;   
+}
+
+.product1{
+    width: 40%;
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+}
+
+
+.review-product{
+    display: flex;
+    justify-content: space-between;
+
+}
+ 
+.product1 img{
+    width: 200px;
+    height: 250px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.product2 img{
+    width: 300px;
+    height: 250px;
+    margin-top: 20px;
+}
+
+.product2{
+    width: 40%;
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+}
+
+.pro1-content, .pro2-content{
+    margin-top: 10%
+}
+
+.star{
+    color: #f19a04;
+}
+
+/* Footer */
+
+footer{
+    background-color: #444;
+    color: white;
+    margin-top: 10px;
+}
+
+.foot-one{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 10px;
+}
+
+.foot-one span{
+    color: white;
+    font-weight: 200;
+}
+.foot-one,.foot-two{
+    display: inline-block;
+}
+
+ul li{
+    display: inline-block;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+ul{
+    margin-left: 70vh;
+    
+}
+
+.footer-content {
+    display: inline-block;
+    margin-left: 60vh;
+}
+
+
+
+.country-select {
+    padding: 10px;
+    font-size: 16px;
+   
+    border: none;
+    cursor: pointer;
+    background-color: #444;
+    color: #ffffff;
+}
+
+/* Add additional styling for hover and focus */
+.country-select:hover,
+.country-select:focus {
+    
+    outline: none;
+}
+
+/* Adjust select width dynamically */
+.country-select option {
+    padding: 5px;
+}
