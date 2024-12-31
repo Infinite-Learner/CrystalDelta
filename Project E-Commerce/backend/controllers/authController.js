@@ -10,8 +10,8 @@ const signup = async (req, res) => {
   }
 
   db.query(
-    "SELECT * FROM drcart_users WHERE user_email = ?",
-    [email],
+    "SELECT * FROM drcart_users WHERE user_email = ? and user_Name = ?",
+    [email,username],
     async (err, results) => {
       if (err) {
         console.error("Database query error:", err);
@@ -23,7 +23,7 @@ const signup = async (req, res) => {
       if (results.length > 0) {
         return res
           .status(400)
-          .json({ success: false, message: "Email is already taken." });
+          .json({ success: false, message: "UserName or Email is already taken." });
       }
 
       try {
@@ -79,7 +79,6 @@ const login = (req, res) => {
       const user = results[0];
       bcrypt.compare(password, user.login_password, (err, match) => {
         if (err || !match) {
-          console.log(user.login_password);
           return res
             .status(400)
             .json({ success: false, message: "Invalid email or password" });
