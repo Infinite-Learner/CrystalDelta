@@ -58,7 +58,6 @@ h4 span{
     color: black;
     text-decoration: none;
 }
-
 .user i{
     margin: 5px;
     font-size: 21px;
@@ -99,7 +98,23 @@ span i{
     bottom: 82.5%;   
     float: right;
 }
+.user{
+    display: flex;
+    position: relative;
+    right:50px;
+}
+.user #user-profile-btn
+{
+    color:white;
+    background: orange;
+    border : solid black 1px;
+    border-radius: 4px;
+    padding: 1px 1px 1px 1px;
+    display: flex;
+    margin-top: 80px;
+    text-decoration: none;
 
+}
 nav {
     background-color:#FFF0DB;
     padding: 10px;
@@ -202,6 +217,11 @@ footer {
 
 }
 
+ #logout-button{
+    background: sandybrown;
+    border : solid rgb(255, 255, 255) 1px;
+    border-radius: 5px;
+ }
  
 .card2 .card-text{
     margin-left: 40px;

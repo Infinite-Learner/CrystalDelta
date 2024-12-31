@@ -1,5 +1,7 @@
 const bcrypt = require("bcrypt");
 const db = require("../config/db");
+const app = require('express')();
+
 const signup = async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -8,7 +10,6 @@ const signup = async (req, res) => {
       .status(400)
       .json({ success: false, message: "Email and password are required." });
   }
-
   db.query(
     "SELECT * FROM drcart_users WHERE user_email = ?",
     [email],
@@ -53,7 +54,6 @@ const signup = async (req, res) => {
 
 const login = (req, res) => {
   const { email, password } = req.body;
-
   if (!email || !password) {
     return res
       .status(400)
@@ -79,15 +79,23 @@ const login = (req, res) => {
       const user = results[0];
       bcrypt.compare(password, user.login_password, (err, match) => {
         if (err || !match) {
-          console.log(user.login_password);
           return res
             .status(400)
             .json({ success: false, message: "Invalid email or password" });
         }
+        req.session.username = user.User_Name;
         res.json({ success: true,message: "Login successful ",username:user.User_Name});
       });
     }
   );
 };
+const logout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).json({ success: false, message: "Logout failed" });
+    }
+    res.json({ success: true, message: "Logged out successfully" });
+  });
+};
 
-module.exports = { signup, login };
+module.exports = { signup, login,logout };
