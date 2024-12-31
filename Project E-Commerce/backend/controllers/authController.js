@@ -79,11 +79,12 @@ const login = (req, res) => {
       const user = results[0];
       bcrypt.compare(password, user.login_password, (err, match) => {
         if (err || !match) {
+          console.log(user.login_password);
           return res
             .status(400)
             .json({ success: false, message: "Invalid email or password" });
         }
-        res.json({ success: true, message: "Login successful" });
+        res.json({ success: true,message: "Login successful ",username:user.User_Name});
       });
     }
   );

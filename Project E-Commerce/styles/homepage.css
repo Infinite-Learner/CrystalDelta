@@ -29,6 +29,8 @@ header .user {
     font-size: 1rem;
 }
 
+
+
 h4 i{
     color: #e39b1e;
     margin-right: 10px;
@@ -50,6 +52,11 @@ h4 span{
 .user{
     margin-top: 10px;
     font-weight: bold;
+}
+
+.user a{
+    color: black;
+    text-decoration: none;
 }
 
 .user i{
@@ -290,7 +297,7 @@ footer {
 }
 
 .card6 .card-text span{
-    margin-left: 100px;
+    margin-left: 10px;
 }
 
 .card6 .card-text{
@@ -426,7 +433,7 @@ footer {
 }
 
 .pro1-content, .pro2-content{
-    margin-top: 10%
+    margin-top: 7%
 }
 
 .star{
@@ -468,7 +475,7 @@ ul{
 
 .footer-content {
     display: inline-block;
-    margin-left: 60vh;
+    margin-left: 55vh;
 }
 
 

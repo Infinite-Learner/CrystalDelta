@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="./styles/loginpage.css">
+    <link rel="stylesheet" href="../styles/loginpage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     
         <div class="image-section">
-            <img src="./assets/img1.jpg" >
+            <img src="../assets/img1.jpg" >
         </div>
         <div class="form-section">
             <h4><i class="fa-solid fa-bag-shopping"></i>shop<span>cart</span></h4>
@@ -23,7 +23,7 @@
                     <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <button type="submit" class="login-button">Shopnow</button> <br>
-                <a href="signup">Don't have and account?<span><p> Register</p></span></a>
+                <a href="signuppage.html">Don't have and account?<span><p> Register</p></span></a>
             </form>
         </div>
         <script>
@@ -43,14 +43,12 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        window.location.href = 'home';  
-                        alert('Login Successful! :\nWelcome  ' + data.user.user_name);
-                        document.getElementByClass('user').innerHTML = data.user.user_name;
-                    }
+                        alert('Login Successful!,\nWelcome : ' +data.username);
+                        window.location.replace('/home');
+                        document.getElementById('uname').innerHTML  = data.username;
+                    } 
                 })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('An error occurred');
+               .catch(error => {
                 });
             });
         </script>
