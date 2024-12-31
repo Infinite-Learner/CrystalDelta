@@ -541,3 +541,26 @@ ul{
 .country-select option {
     padding: 5px;
 }
+
+.mini-pop{
+    background-color: black;
+    position: absolute;
+    top: 18%;
+    left: 0%;
+    width: 50%;
+    
+    height: 83%;
+    opacity: .7;
+    display: none;
+    
+}
+
+.main-pop{
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    background-color: white;
+    width: 50%; 
+    height: 83%;
+    display: none;
+}

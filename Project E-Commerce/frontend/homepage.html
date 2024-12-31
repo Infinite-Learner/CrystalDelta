@@ -24,7 +24,7 @@
         </div>
     </header>
     <div class="right-side">
-        <div class="user"><i class="fa-solid fa-circle-user"></i> <a href="loginpage.html">Login</a></div>
+        <div class="user"><i class="fa-solid fa-circle-user"></i> <a href="login">Login</a></div>
         <div class="search-bar">
             <input type="text" placeholder="Search "><i class="fa-solid fa-magnifying-glass"></i>
         </div>
@@ -61,8 +61,8 @@
         <div class="product-detail">
             <p>hot deals for you</p>
         </div>
-        <div class="card4" style="width: 12rem;" onclick="expandCard('product1')">
-            <img src="../assets/pro2.jpg" class="card-img-top">
+        <div class="card4" style="width: 12rem;" >
+            <img src="../assets/pro2.jpg" class="card-img-top" onclick="expandCard('product1')">
             <div class="card-body">
                 <p class="card-text">Inalsa Air Fryer Fry-<br>Light-1400W <br><i
                         class="fa-solid fa-indian-rupee-sign"></i>4,627.00 <span>-40% off</span></p>
@@ -207,7 +207,7 @@
 
         <!-- OnClick Operation -->
         
-        <div id="expanded-card" class="expanded-card hidden">
+         <div id="expanded-card" class="expanded-card hidden">
             <button class="close-btn" onclick="closeCard()">X</button>
             <div class="expanded-content">
                 <div class="expanded-details">
@@ -232,7 +232,9 @@
                 </div>
                 
             </div>
-        </div>
+        </div> 
+
+        
         
 
         <footer>
@@ -255,7 +257,42 @@
         </div>
     </footer>
     </div>
-    <script >
+
+
+<!-- Additional -->
+
+<!-- 
+    <div class="mini-pop"></div>
+    <div class="main-pop">
+        <button>X</button>
+        <div class="expanded-content">
+            <div class="expanded-details">
+                <h3 id="expanded-title"></h3>
+                <p id="expanded-description"></p>
+                <h4 id="expanded-price"></h4>
+                <div class="rating">
+                    <p>Rating: 
+                        <span>⭐⭐⭐⭐☆</span> (4.0)
+                    </p>
+                </div>
+                <img src="../assets/pro1.jpg" alt="Expanded Product" width="200px" height="200px"/>
+                <div class="color-options">
+                    <label for="colors">Color:</label>
+                    <select id="colors">
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="black">Black</option>
+                    </select>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div> -->
+
+
+
+
+     <script >
+        
 const productData = {
     product1: {
         title: 'Inalsa Air Fryer Fry-Light 1400W',
@@ -280,7 +317,15 @@ function expandCard(productId) {
 function closeCard() {
     const expandedCard = document.getElementById('expanded-card');
     expandedCard.classList.add('hidden');
-}
+} 
+
+// var pop1=document.getElementsByClassName(".mini-pop")
+// var pop2=document.getElementsByClassName(".main-pop")
+
+// function click(){
+//     pop1.style.display="block"
+//     pop2.style.display="block"
+// }
 
 
     </script>
