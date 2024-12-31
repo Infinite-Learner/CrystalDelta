@@ -22,10 +22,8 @@ app.get('/signup', (req, res) => {
 
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
-
-const PORT = 3000;
-app.listen(PORT,() => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(process.env.ENV_PORT,() => {
+  console.log(`Server running on port ${process.env.ENV_PORT}`);
   
 }
 ); 
