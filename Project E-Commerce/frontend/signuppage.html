@@ -23,7 +23,7 @@
                     <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="password" name="password" placeholder="Confirm Password" required>
+                    <input type="password" id="cpassword" name="password" placeholder="Confirm Password" required>
                 </div>
                 <button type="submit" class="signup-button">sign-up</button> <br>
                 <a href="loginpage.html">Yes I have an account?<span><p>Login</p></span></a>
@@ -52,7 +52,7 @@
             alert('User registered successfully');
             window.location.href = 'login';
           } else {
-            alert('User registration failed');
+            alert('User registration failed : ' + data.message);
           }
         })
         .catch(error => {
