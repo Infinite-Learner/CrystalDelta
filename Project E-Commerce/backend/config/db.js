@@ -3,17 +3,25 @@ const mysql = require("mysql2");
 const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
-const bycrypt = require('bcryptjs');
-const { Console } = require("console");
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
 });
 db.connect((err) => {
   if (err) throw err;
-  console.log("Connected to MySQL database");
+  else {
+    console.log("Connected to MySQL database");
+    db.query(`USE ${process.env.DB_NAME}`, (err) => {
+      if (err){ 
+      db.query(`CREATE DATABASE ${process.env.DB_NAME}`, (err) => {
+        if (err) throw err; 
+      })
+      console.log("Database created");
+      console.log("Creating tables...");
+      }
+    });
+  }
 });
 const sqlFiles = [
   "products.sql",
@@ -22,7 +30,6 @@ const sqlFiles = [
   "OrderedItems.sql"
 ];
 if (process.env.TABLES_EXISTS == "false") {
-  console.log(path.join(__dirname, "../.env"));
   let count = 0; 
   sqlFiles.forEach((file) => {
     let sqlFilePath = path.join(__dirname, "../db", file);
@@ -43,12 +50,17 @@ if (process.env.TABLES_EXISTS == "false") {
               `Table ${file.split(".")[0].toUpperCase()} Created Successfully`
             );
             count++;
-        }
-        if (count == sqlFiles.length ) {
-          const ENV_FILE_PATH = path.join(__dirname, "../.env");
-            const key = "TABLES_EXISTS";
-            const newValue = "true";
-            if(process.env.SAMPLE_DATA == "false"){
+          }
+          if (count == sqlFiles.length){
+            console.log(count);
+            envUpdate('TABLES_EXISTS','true')
+          }
+        })
+    });
+      });
+      
+    }
+       if(process.env.SAMPLE_DATA == "false"){
               count = 0;
               insertData = ['sampleUsers.sql'];
               insertData.forEach(file => {
@@ -64,35 +76,28 @@ if (process.env.TABLES_EXISTS == "false") {
                     if(count == insertData.length){
                       console.log('Sample Data Inserted Successfully');
                       if(count == insertData.length ){
-                        try {
-                      let envContent = fs.readFileSync(ENV_FILE_PATH, "utf8");
-                      const key1 = "SAMPLE_DATA";
-                      const regex1 = new RegExp(`^${key}=.*$`, "m");
-                      const regex = new RegExp(`^${key1}=.*$`, "gm");
-                      if (regex.test(envContent)) {
-                        envContent = envContent.replace(regex, `${key}=${newValue}`);
-                        envContent = envContent.replace(regex1, `${key1}=${newValue}`);
-                      } else {
-                        envContent += `\n${key1}=${newValue}\n`;
-                        
-                        envContent += `\n${key}=${newValue}\n`;
+                        envUpdate('SAMPLE_DATA','true');                  
                       }
-                      fs.writeFileSync(ENV_FILE_PATH, envContent, "utf8");
-                    } catch (error) {
-                      console.error(`Error updating .env file: ${error}`);
-                    }
-                  }
-                      process.exit(0);
-                    }
-                    });
-
-              });
+                    }});
               
+                  });
+
           });
-          }
         }
-      });
-    });
-  });
+function envUpdate(key,newValue){
+  try {
+    const ENV_FILE_PATH = path.join(__dirname, "../.env");
+    let envContent = fs.readFileSync(ENV_FILE_PATH, "utf8");
+    const regex = new RegExp(`^${key}=.*$`, "m");
+    if (regex.test(envContent)) {
+      envContent = envContent.replace(regex, `${key}=${newValue}`);
+      }
+     else {
+      envContent += `\n${key}=${newValue}\n`;
+    }
+    fs.writeFileSync(ENV_FILE_PATH, envContent, "utf8");
+  } catch (error) {
+    console.error(`Error updating .env file: ${error}`);
+  }
 }
 module.exports = db;

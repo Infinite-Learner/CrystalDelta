@@ -1,7 +1,5 @@
 const bcrypt = require("bcrypt");
 const db = require("../config/db");
-const app = require('express')();
-
 const signup = async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -30,7 +28,7 @@ const signup = async (req, res) => {
       try {
         const hashedPassword = await bcrypt.hash(password, 10);
         const query =
-          "INSERT INTO drcart_users (user_name,user_email, login_password) VALUES (?,?, ?)";
+          "INSERT INTO drcart_users (user_name,user_email, login_password,logged_time) VALUES (?,?, ?,NOW())";
         db.query(query, [username, email, hashedPassword], (err, result) => {
           if (err) {
             console.error("Database insert error:", err);
@@ -84,6 +82,11 @@ const login = (req, res) => {
             .json({ success: false, message: "Invalid email or password" });
         }
         req.session.username = user.User_Name;
+        req.session.userid = user.User_Id;
+        req.session.useremail = user.User_Email;
+        db.query("UPDATE drcart_users SET logged_time = NOW() WHERE user_id = ?",[user.User_Id],(err)=>{
+          if (err) throw err;
+        });
         res.json({ success: true,message: "Login successful ",username:user.User_Name});
       });
     }
