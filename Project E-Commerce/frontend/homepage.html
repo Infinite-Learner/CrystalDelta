@@ -24,12 +24,18 @@
         </div>
     </header>
     <div class="right-side">
-        <div class="user"><i class="fa-solid fa-circle-user"></i> <a href="login">Login</a></div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search "><i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-    </div>
+        <div class="user">
+            <i class="fa-solid fa-circle-user"></i>
+            <button id="user-profile-btn" class="btn btn-link" onclick="goToLoginPage()">Login</button>
+            <div id="user-profile"></div>
+            <button id="logout-button" style="display: none;" onclick="logout()">Logout</button>
 
+        </div>
+
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="search">
+    </div>
     <nav>
         <ul>
             <li>Fresh</li>
@@ -61,15 +67,15 @@
         <div class="product-detail">
             <p>hot deals for you</p>
         </div>
-        <div class="card4" style="width: 12rem;" >
+        <div class="card4" style="width: 12rem;">
             <img src="../assets/pro2.jpg" class="card-img-top" onclick="expandCard('product1')">
             <div class="card-body">
                 <p class="card-text">Inalsa Air Fryer Fry-<br>Light-1400W <br><i
                         class="fa-solid fa-indian-rupee-sign"></i>4,627.00 <span>-40% off</span></p>
             </div>
         </div>
-        
-        <div class="card1" style="width: 12rem;" onclick="expandCard('product2')">
+
+        <div class="card1" style="width: 12rem;">
             <img src="../assets/pro3.jpg" class="card-img-top">
             <div class="card-body">
                 <p class="card-text">Boat Z2 Bluethooth<br>wirless<br><i
@@ -150,9 +156,10 @@
                 <img src="../assets/pro14.jpg" class="card-img-top">
                 <div class="card-body">
                     <p class="card-text">SanDisk Cruzer Blade <br> USB 2.0 <br>32 GB <span>-19%off/span>
-                    <p class="add-cart">
-                        <i class="fa-solid fa-indian-rupee-sign"></i><span>495.00</span> <button>Add to cart</button>
-                    </p>
+                            <p class="add-cart">
+                                <i class="fa-solid fa-indian-rupee-sign"></i><span>495.00</span> <button>Add to
+                                    cart</button>
+                            </p>
                     </p>
                 </div>
             </div>
@@ -206,38 +213,78 @@
         </div>
 
         <!-- OnClick Operation -->
-        
-         <div id="expanded-card" class="expanded-card hidden">
-            <button class="close-btn" onclick="closeCard()">X</button>
-            <div class="expanded-content">
+
+        <!-- <div class="container">
+            
+            <div class="leftside">
+
                 <div class="expanded-details">
+                    
                     <h3 id="expanded-title"></h3>
                     <p id="expanded-description"></p>
                     <h4 id="expanded-price"></h4>
                     <div class="rating">
-                        <p>Rating: 
-                            <span>⭐⭐⭐⭐☆</span> (4.0)
-                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam error animi inventore dolore
+                            voluptatibus recusandae veritatis aut. Sequi est accusantium eaque suscipit repudiandae
+                            commodi, harum sint a nemo</p>
+                        
+                        <img id="expanded-img" src="../assets/pro2.jpg" alt="Expanded Product" />
                     </div>
-                    <img id="expanded-img" src="" alt="Expanded Product" />
-                    <div class="color-options">
-                        <label for="colors">Color:</label>
-                        <select id="colors">
-                            <option value="red">Red</option>
-                            <option value="blue">Blue</option>
-                            <option value="black">Black</option>
-                        </select>
+
+                    
+                        
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                
+                    
+
+           
+
+    </div>
+    </div> -->
+        <div id="expanded-card" class="expanded-card hidden">
+            <div class="first-left">
+                <img src="../assets/pro10.jpg" alt="" width="70px" height="80px" class="first-img">
+                <img src="../assets/pro11.jpg" alt="" width="70px" height="80px">
+                <img src="../assets/pro13.jpg" alt="" width="70px" height="80px">
+                <img src="../assets/pro15.jpg" alt="" width="70px" height="80px">
             </div>
-        </div> 
+            <div class="expanded-details">
+            <a href="homepage.html"><button class="home-btn1">Home/</button></a>
+                    <a href=""><button class="home-btn2"> <b>Your Cart</b> </button></a>
+            <h3 id="expanded-title"></h3>
+                <p id="expanded-description"></p>
+                <p>Rating:
+                    <span>⭐⭐⭐⭐☆</span> (4.0)
+                </p>
+                <h4 id="expanded-price"></h4>
+            <button class="close-btn" onclick="closeCard()">X</button>
+            <img id="expanded-img" src="" alt="Expanded Product" />                
+                <div class="color-options">
+                        <label class="lable">Color: <span>Black</span> </label>
+                        <div class="colors-div">
+                            <p class="color1"></p>
+                            <p class="color2"></p>
+                            <p class="color3"></p>
+                            <p class="color4"></p>
+                        </div>
 
-        
-        
+            </div>
+            <input type="number" placeholder="Quantity">
+            <a href="checkoutpage.html"><button class="cart-btn">Add to cart</button></a>
+            <div class="share-btn">
+                <ul>
+                    <li>Compare</li>
+                    <li><i class="fa-solid fa-message"></i>Ask a question</li>
+                    <li><i class="fa-solid fa-share-nodes"></i>Share</li>
+                </ul>
+            </div>
+            <h4><i class="fa-solid fa-truck"></i> Estimate Delivery: <span>Jul 30 - Aug 5</span></h4>
+            <h4><i class="fa-solid fa-box"></i> Free Shopping & Returns: <span>On all orders over $75</span>
+            </h4>
+        </div>
+        </div>
+    </div>
 
-        <footer>
+    <footer>
         <h4 class="foot-one">Shop<span>cart</span> </h4>
         <div class="foot-two">
             <ul>
@@ -248,86 +295,78 @@
         </div>
         <div class="footer-content">
             <select id="country-select" class="country-select">
-                <option value="au" >Chines</option>
-                <option value="us" >English</option>
-                <option value="uk" >French</option>
-                <option value="in" >Russian</option>
-                <option value="ca" >Spanish</option>
+                <option value="au">Chines</option>
+                <option value="us">English</option>
+                <option value="uk">French</option>
+                <option value="in">Russian</option>
+                <option value="ca">Spanish</option>
             </select>
         </div>
     </footer>
     </div>
 
+    <script>
 
-<!-- Additional -->
+        function checkUserProfile() {
+            const username = localStorage.getItem('username');
+            if (username) {
+                document.getElementById('logout-button').style.display = 'flex';
+                document.getElementById('user-profile').innerHTML = username;
+                document.getElementById('user-profile-btn').style.display = 'none';
+                document.getElementById('logout-button').innerHTML = 'Logout';
+            } else {
+                document.getElementById('user-profile-btn').style.display = 'flex';
+                document.getElementById('user-profile').innerHTML = 'to Shop';
+                document.getElementById('logout-button').style.display = 'none';
+            }
+        }
+        function goToLoginPage() {
+            window.location.href = 'login';
+        }
+        function logout() {
+            fetch('/api/auth/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        localStorage.removeItem('username');
+                        alert(data.message);
+                        window.location.href = 'home';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        window.onload = checkUserProfile;
 
-<!-- 
-    <div class="mini-pop"></div>
-    <div class="main-pop">
-        <button>X</button>
-        <div class="expanded-content">
-            <div class="expanded-details">
-                <h3 id="expanded-title"></h3>
-                <p id="expanded-description"></p>
-                <h4 id="expanded-price"></h4>
-                <div class="rating">
-                    <p>Rating: 
-                        <span>⭐⭐⭐⭐☆</span> (4.0)
-                    </p>
-                </div>
-                <img src="../assets/pro1.jpg" alt="Expanded Product" width="200px" height="200px"/>
-                <div class="color-options">
-                    <label for="colors">Color:</label>
-                    <select id="colors">
-                        <option value="red">Red</option>
-                        <option value="blue">Blue</option>
-                        <option value="black">Black</option>
-                    </select>
-                </div>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-    </div> -->
+        const productData = {
+            product1: {
+                img: '../assets/pro2.jpg',
+                title: 'Product 1',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹4,627.00',
+            },
+        };
 
+        function expandCard(productId) {
+            const expandedCard = document.getElementById('expanded-card');
+            const product = productData[productId];
 
+            document.getElementById('expanded-img').src = product.img;
+            document.getElementById('expanded-title').textContent = product.title;
+            document.getElementById('expanded-description').textContent = product.description;
+            document.getElementById('expanded-price').textContent = product.price;
 
+            expandedCard.classList.remove('hidden');
+        }
 
-     <script >
-        
-const productData = {
-    product1: {
-        title: 'Inalsa Air Fryer Fry-Light 1400W',
-        description: 'This air fryer uses rapid air technology for healthy cooking with less oil.',
-        img: '../assets/pro2.jpg',
-        price: '₹4,627.00',
-    },
-};
-
-function expandCard(productId) {
-    const expandedCard = document.getElementById('expanded-card');
-    const product = productData[productId];
-
-    document.getElementById('expanded-img').src = product.img;
-    document.getElementById('expanded-title').textContent = product.title;
-    document.getElementById('expanded-description').textContent = product.description;
-    document.getElementById('expanded-price').textContent = product.price;
-
-    expandedCard.classList.remove('hidden');
-}
-
-function closeCard() {
-    const expandedCard = document.getElementById('expanded-card');
-    expandedCard.classList.add('hidden');
-} 
-
-// var pop1=document.getElementsByClassName(".mini-pop")
-// var pop2=document.getElementsByClassName(".main-pop")
-
-// function click(){
-//     pop1.style.display="block"
-//     pop2.style.display="block"
-// }
-
-
+        function closeCard() {
+            const expandedCard = document.getElementById('expanded-card');
+            expandedCard.classList.add('hidden');
+        }
     </script>
 </body>
 

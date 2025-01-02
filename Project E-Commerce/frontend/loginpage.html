@@ -33,7 +33,7 @@
     
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
-                fetch('/api/auth/login', {
+                fetch('/api/auth/login',{
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -43,7 +43,9 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
+                        localStorage.setItem('username', data.username);
                         alert('Login Successful!,\nWelcome : ' +data.username);
+                        window.location.href = 'home';
                     } 
             })
             .catch(error => {
