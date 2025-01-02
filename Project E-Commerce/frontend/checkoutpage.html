@@ -1,5 +1,6 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/checkoutpage.css">
 </head>
+
 <body>
     <header>
         <div class="title">
@@ -23,18 +25,17 @@
     </header>
     <div class="right-side">
         <div class="user">
-            <i class="fa-solid fa-circle-user"></i> 
-            <button id="user-profile-btn" class="btn btn-link"
-                onclick="goToLoginPage()">Login</button>
-                <div id="user-profile"></div>
+            <i class="fa-solid fa-circle-user"></i>
+            <button id="user-profile-btn" class="btn btn-link" onclick="goToLoginPage()">Login</button>
+            <div id="user-profile"></div>
             <button id="logout-button" style="display: none;" onclick="logout()">Logout</button>
-            
+
         </div>
-        
+
     </div>
     <div class="search-bar">
-    <input type="text" placeholder="search">
-</div>
+        <input type="text" placeholder="search">
+    </div>
     <nav>
         <ul>
             <li>Fresh</li>
@@ -53,162 +54,178 @@
         </ul>
     </nav>
 
-<div class="container">
-    <div class="first-left">
-        <img src="../assets/pro10.jpg" alt="" width="80px" height="90px" class="first-img">
-        <img src="../assets/pro11.jpg" alt="" width="80px" height="90px">
-        <img src="../assets/pro13.jpg" alt="" width="80px" height="90px">
-        <img src="../assets/pro15.jpg" alt="" width="80px" height="90px">
-    </div>
-    <div class="leftside">
-        <div id="expanded-card" class="expanded-card hidden">
-             
-            <div class="expanded-content">
+    <div class="container">
+        <div class="first-left">
+            <img src="../assets/product2.jpg" alt="" width="80px" height="90px" class="first-img">
+            <img src="../assets/comp2(1).jpg" alt="" width="80px" height="90px">
+            <img src="../assets/comp2(2).jpg" alt="" width="80px" height="90px">
+            <img src="../assets/comp2(3).jpg" alt="" width="80px" height="90px">
+        </div>
+        <div class="leftside">
+            <div id="expanded-card" class="expanded-card hidden">
 
-                <div class="expanded-details">
-                    <a href="homepage.html"><button class="home-btn1">Home/</button></a>
-                    <a href=""><button class="home-btn2"> <b>Your Cart</b> </button></a>
-                    <h3 id="expanded-title"></h3>
-                    <p id="expanded-description"></p>
-                    <h4 id="expanded-price"></h4>
-                    <div class="rating">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam error animi inventore dolore voluptatibus recusandae veritatis aut. Sequi est accusantium eaque suscipit repudiandae commodi, harum sint a nemo</p>
-                        <p>Rating: 
-                            <span>⭐⭐⭐⭐☆</span> (4.0)
-                        </p>
-                        <img id="expanded-img" src="../assets/pro12.jpg" alt="Expanded Product"  />
-                    </div>
-                    
-                    <div class="color-options">
-                        <label class="lable">Color: <span>Black</span> </label>
-                        <div class="colors-div">
-                        <p class="color1"></p>
-                        <p class="color2"></p>
-                        <p class="color3"></p>
-                        <p class="color4"></p>
+                <div class="expanded-content">
+
+                    <div class="expanded-details">
+                        <button class="home-btn1" onclick="goToHomePage()">Home ></button></a>
+                        <a href=""><button class="home-btn2"> <b>Your Cart</b> </button></a>
+                        <h3 id="expanded-title"></h3>
+                        <p id="expanded-description"></p>
+                        <h4 id="expanded-price"></h4>
+                        <div class="rating">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam error animi inventore
+                                dolore voluptatibus recusandae veritatis aut. Sequi est accusantium eaque suscipit
+                                repudiandae commodi, harum sint a nemo</p>
+                            <p>Rating:
+                                <span>⭐⭐⭐⭐☆</span> (4.0)
+                            </p>
+                            <img id="expanded-img" src="../assets/product2.jpg" alt="Expanded Product" />
                         </div>
-                        <input type="number" placeholder="Quantity">
 
+                        <div class="color-options">
+                            <label class="lable">Color: <span>Black</span> </label>
+                            <div class="colors-div">
+                                <p class="color1"></p>
+                                <p class="color2"></p>
+                                <p class="color3"></p>
+                                <p class="color4"></p>
+                            </div>
+                            <input type="number" placeholder="Quantity">
+
+                        </div>
+                        <div class="share-btn">
+                            <ul>
+                                <li><i class="fa-solid fa-arrow-up"></i><i class="fa-solid fa-arrow-down-long"></i>Compare</li>
+                                <li><i class="fa-solid fa-message"></i>Ask a question</li>
+                                <li><i class="fa-solid fa-share-nodes"></i>Share</li>
+                            </ul>
+                        </div>
+                        <h4><i class="fa-solid fa-truck"></i> Estimate Delivery: <span>Jul 30 - Aug 5</span></h4>
+                        <h4><i class="fa-solid fa-box"></i> Free Shopping & Returns: <span>On all orders over $75</span>
+                        </h4>
                     </div>
-                    <div class="share-btn">
-                        <ul>
-                            <li>Compare</li>
-                            <li><i class="fa-solid fa-message"></i>Ask a question</li>
-                            <li><i class="fa-solid fa-share-nodes"></i>Share</li>
-                        </ul>
-                    </div>
-                    <h4><i class="fa-solid fa-truck"></i> Estimate Delivery: <span>Jul 30 - Aug 5</span></h4>
-                    <h4><i class="fa-solid fa-box"></i> Free Shopping & Returns: <span>On all orders over $75</span></h4>
+
                 </div>
-                
             </div>
-        </div> 
 
-    </div>
-    <div class="rightside">
-        <ul>
-            <li>Product</li>
-            <li>Quanty</li>
-            <li>Price</li>
-            <li>Subtotal</li>
-        </ul>
-    </div>
-    
-</div>
-<div class="midle-of">
-    <h4>Cart Summary</h4>
-    <h6><input type="radio" name="ravi"> Free Shopping  <span class="rate1"> $0.0</span> <br></h6>
-    <h6><input type="radio" name="ravi"> Express Shopping  <span class="rate2">$15.0</span><br></h6>
-    <h6><input type="radio" name="ravi"> Pickup  <span class="rate3">%21</span> <br></h6>
-    <h5>Subtotal <span>$36.0</span></h5>
-    <hr>
-    <h3>Total <span>$36.0</span></h3>
-    <button class="checkout">Checkout</button>
+        </div>
 
-    <div class="coupon">
-        <h4>Have a Coupon?</h4>
-        <p class="coupon-para">Add your code for an instant cart discount</p>
+        <div class="main-top">
+        <div class="topside">
+            <img src="../assets/product2.jpg" alt="" width="75px" height="60px">
+            <ul>
+                <li>Tray Table</li>
+                <li>Color:Black</li>
+                <li><button>X Remove</button></li>
+            </ul>
+
         
-        <p class="coupon-code"> <i class="fa-solid fa-ticket"></i> <input type="text" placeholder="Coupon Code" >
-        <button class="coupon-btn">Apply</button></p>
+            <input type="number" placeholder="Add">
+            <p class="price-amount">$19.00</p>
+            <p class="price-amount1">$38.00</p>
+        </div>
     </div>
-</div>
-
-
-
-</body>
-</html> 
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopCart</title>
-    <link rel="stylesheet" href="../styles/checkoutpage.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="logo">shop<span>cart</span></div>
-        <div class="location">
-            <span>Delhi, 11010</span>
-            <i class="location-icon">📍</i>
+        <div class="rightside">
+            <ul>
+                <li>Product</li>
+                <li>Quanty</li>
+                <li>Price</li>
+                <li>Subtotal</li>
+            </ul>
         </div>
-        <ul class="nav-links">
-            <li>Today's Deals</li>
-            <li>Mobiles</li>
-            <li>Gift Cards</li>
-            <li>Clothing</li>
-            <li>Health</li>
-            <li>Pet Corner</li>
-            <li>Books</li>
-            <li>Beauty</li>
-            <li>Kitchen</li>
-            <li>Real Estate</li>
-            <li>Sport</li>
-        </ul>
-        <div class="user">
-            <span>Henry James</span>
-            <img class="user-icon" src="user-icon.png" alt="User">
-        </div>
-    </nav>
 
-    <section class="product-section">
-        <div class="breadcrumb">
-            Home / Your Cart
-        </div>
-        <div class="product-container">
-            <div class="product-image">
-                <img src="product-image.png" alt="OnePlus Earphones">
-            </div>
-            <div class="product-details">
-                <h1>OnePlus Bullets Z2 Bluetooth Wireless in Ear Earphones with Mic</h1>
-                <p>Features: 12.4 mm Drivers, 10 mins Charge = 20 hrs Music, 30 hrs Battery Life, IP55 Dust and Water Resistant</p>
-                <div class="color-options">
-                    <label for="color">Color:</label>
-                    <button class="color-btn black"></button>
-                    <button class="color-btn red"></button>
-                    <button class="color-btn blue"></button>
-                </div>
-                <button class="add-to-cart">Add to Cart</button>
+
+        <div class="midle-of">
+            <h4>Cart Summary</h4>
+            <h6><input type="radio" name="ravi"> Free Shopping <span class="rate1"> $0.0</span> <br></h6>
+            <h6><input type="radio" name="ravi"> Express Shopping <span class="rate2">$15.0</span><br></h6>
+            <h6><input type="radio" name="ravi"> Pickup <span class="rate3">%21</span> <br></h6>
+            <h5>Subtotal <span>$36.0</span></h5>
+            <hr>
+            <h3>Total <span>$36.0</span></h3>
+            <button class="checkout">Checkout</button>
+
+            <div class="coupon">
+                <h4>Have a Coupon?</h4>
+                <p class="coupon-para">Add your code for an instant cart discount</p>
+
+                <p class="coupon-code"> <i class="fa-solid fa-ticket"></i> <input type="text" placeholder="Coupon Code">
+                    <button class="coupon-btn">Apply</button>
+                </p>
             </div>
         </div>
-        <div class="cart-summary">
-            <h2>Cart Summary</h2>
-            <div class="summary-row">Free Shipping: $0.00</div>
-            <div class="summary-row">Express Shipping: $15.00</div>
-            <div class="summary-row">Pickup: $12.00</div>
-            <div class="total-row">Total: $38.00</div>
-            <button class="checkout-btn">Checkout</button>
+       
+    </div>
+    <footer>
+        <h4 class="foot-one">Shop<span>cart</span> </h4>
+        <div class="foot-two">
+            <ul>
+                <li>About us</li>
+                <li>Contact</li>
+                <li>Help</li>
+            </ul>
         </div>
-    </section>
+    <div class="footer-content">
+        <select id="country-select" class="country-select">
+            
+            <option value="us">English</option>
+            <option value="uk">French</option>
+            <option value="in">Russian</option>
+            <option value="ca">Spanish</option>
+        </select>
+    </div>
+    </footer>
+
     <script>
-        document.querySelector('.add-to-cart').addEventListener('click', () => {
-    alert('Added to cart!');
-});
+
+        function checkUserProfile() {
+            const username = localStorage.getItem('username');
+            if (username) {
+                document.getElementById('logout-button').style.display = 'flex';
+                document.getElementById('user-profile').innerHTML = username;
+                document.getElementById('user-profile-btn').style.display = 'none';
+                document.getElementById('logout-button').innerHTML = 'Logout';
+            } else {
+                document.getElementById('user-profile-btn').style.display = 'flex';
+                document.getElementById('user-profile').innerHTML = 'to Shop';
+                document.getElementById('logout-button').style.display = 'none';
+            }
+        }
+        function goToHomePage() {
+            window.location.href = 'home';
+        }
+        window.onload = checkUserProfile;
+
+
+        const myimg = document.getElementById('expanded-img');
+
+        myimg.addEventListener('mousemove', onZoom);
+        myimg.addEventListener('mouseleave', offZoom);
+
+        function onZoom(e) {
+            const rect = e.target.getBoundingClientRect();
+            const x = e.clientX - rect.left; // X-coordinate within the image
+            const y = e.clientY - rect.top;  // Y-coordinate within the image
+
+            // Calculate the percentage position of the cursor within the image
+            const xPercent = (x / rect.width) * 100;
+            const yPercent = (y / rect.height) * 100;
+
+            // Apply transform origin based on cursor position and scale up
+            myimg.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+            myimg.style.transform = 'scale(2)'; // Adjust the scale factor as needed
+            myimg.style.cursor = 'zoom-out'; // Change cursor to indicate zoom-out
+        }
+
+        function offZoom() {
+            // Reset transform and cursor when not hovering
+            myimg.style.transform = 'scale(1)';
+            myimg.style.cursor = 'zoom-in';
+        }
 
     </script>
+
+
 </body>
-</html> -->
+
+</html>
