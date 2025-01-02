@@ -4,12 +4,14 @@ const cors = require('cors');
 const app = express();
 const path = require('path');
 const session = require('express-session');
-
+const bycrypt = require('bcryptjs');
 app.use(session({
   secret: 'drcartforbestshopping2025', 
   resave: false, 
   saveUninitialized: true, 
-  cookie: { secure: false }, // Set secure: true if you're using HTTPS
+  cookie: { secure: false ,
+    SameSite : 'None'
+  }, // Set secure: true if you're using HTTPS
 }));
 app.use(cors());
 app.use(bodyParser.json());
@@ -25,12 +27,19 @@ app.get('/login', (req, res) => {
 app.get('/signup', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/signuppage.html'));
 });
-
+app.get('/orders', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/orders.html'));
+});
+app.get(':id/order-Products', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/order-products.html'));
+});
 const authRoutes = require('./routes/auth');
-
+const orderRoutes = require('./routes/OrdersRoute');
+const getProducts = require('./routes/getProducts');
 app.use('/api/auth', authRoutes);
+app.use('/api/Order', orderRoutes);
+app.use('/api/getProducts', getProducts);
 app.listen(process.env.ENV_PORT,() => {
   console.log(`Server running on port ${process.env.ENV_PORT}`);
-  
 }
 ); 
