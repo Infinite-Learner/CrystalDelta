@@ -71,10 +71,7 @@ span i{
     color: black;
 }
 
-.user #logout-button{
-
-}
- .search-bar input {
+.search-bar input {
     width: 27%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -85,14 +82,6 @@ span i{
     left: 70%;
     bottom: 88%;
 }
-
-/* .search-bar i{
-    position: absolute;
-    bottom: 46%;
-    left: 64%;
-    color: gray;
-} */
-
 
 .right-side{
     position: absolute;
@@ -184,14 +173,6 @@ nav ul li {
     position: absolute;
     top: 40%;
 }
-
-/* 
-footer {
-    background-color: #444;
-    color: white;
-    padding: 10px;
-    text-align: center;
-} */
 
 .product-detail{
     font-weight: bold;
@@ -309,11 +290,6 @@ footer {
 .card5 .card-text{
     margin: 5px;
 }
-
-/* .card5:hover{
-    width: 13rem;
-    height: fit-content;
-} */
 
 .card6{
     border: 2px solid aliceblue;
@@ -475,44 +451,6 @@ footer {
     z-index: 1000; /* Ensure the navbar stays above other content */
 }
 
-/* Style for the expanded product details */
-
-/* .container{
-   position: absolute;
-   border: 1px solid black;
-   background-color: white;
-   
-   right: -50%;
-   top: 10%;
-}
-
-.expanded-details .rating{
-    width: 50%;
-}
-
-
-
-
-.expanded-details{
-    margin-left: 10%;
-   width: 50%;
-}
-
-
-.expanded-details img{
-    width: 280px;
-    height: 300px;
-}
-
-
-
-
-.expanded-details h4{
-    font-size: 17px;
-    margin-top: 10px;
-} */
-
-
 .expanded-card {
     position: absolute;
     top: 19%;
@@ -640,12 +578,6 @@ footer {
     gap: 20px;
 }
 
-
-
-
-
-
-
 /* Footer */
 
 footer{
@@ -683,50 +615,3 @@ ul{
     display: inline-block;
     margin-left: 55vh;
 }
-
-
-
-/* .country-select {
-    padding: 10px;
-    font-size: 16px;
-   
-    border: none;
-    cursor: pointer;
-    background-color: #444;
-    color: #ffffff;
-}
-
-/* Add additional styling for hover and focus */
-/*.country-select:hover,
-.country-select:focus {
-    
-    outline: none;
-} */
-
-/* Adjust select width dynamically
-.country-select option {
-    padding: 5px;
-}
-
-.mini-pop{
-    background-color: black;
-    position: absolute;
-    top: 18%;
-    left: 0%;
-    width: 50%;
-    
-    height: 83%;
-    opacity: .7;
-    display: none;
-    
-}
-
-.main-pop{
-    position: absolute;
-    top: 18%;
-    left: 50%;
-    background-color: white;
-    width: 50%; 
-    height: 83%;
-    display: none;
-} */
