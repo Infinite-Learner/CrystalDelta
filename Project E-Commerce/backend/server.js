@@ -4,12 +4,14 @@ const cors = require('cors');
 const app = express();
 const path = require('path');
 const session = require('express-session');
-
+const bycrypt = require('bcryptjs');
 app.use(session({
   secret: 'drcartforbestshopping2025', 
   resave: false, 
   saveUninitialized: true, 
-  cookie: { secure: false }, // Set secure: true if you're using HTTPS
+  cookie: { secure: false ,
+    SameSite : 'None'
+  }, // Set secure: true if you're using HTTPS
 }));
 app.use(cors());
 app.use(bodyParser.json());
@@ -31,6 +33,5 @@ const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
 app.listen(process.env.ENV_PORT,() => {
   console.log(`Server running on port ${process.env.ENV_PORT}`);
-  
 }
 ); 
