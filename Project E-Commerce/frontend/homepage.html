@@ -35,6 +35,7 @@
     </div>
     <div class="search-bar">
         <input type="text" placeholder="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
     </div>
     <nav>
         <ul>
@@ -55,122 +56,126 @@
     </nav>
 
     <div class="main">
-        <div class="hot-deals">
-            <h4>We picked some <br><span>cool things</span> for you!*</h4>
-            <div class="deals">
-                <div class="deal-card">
-                    <img src="../assets/banar.jpg" alt="">
-                </div>
-                <!-- Add more products -->
+
+        <h4>We picked some <br><span>cool things</span> for you!*</h4>
+        <div class="deals">
+            <div class="deal-card">
+                <img src="../assets/banar.jpg" alt="">
             </div>
+            <!-- Add more products -->
         </div>
-        <div class="product-detail">
-            <p>hot deals for you</p>
-        </div>
-        <div class="card4" style="width: 12rem;" onclick="expandCard('product1')">
-            <img src="../assets/product1.jpg" class="card-img-top">
-            <div class="card-body">
-                <p class="card-text" >Inalsa Air Fryer Fry-<br>Light-1400W<br><i
-                        class="fa-solid fa-indian-rupee-sign"></i>4,627.00 <span>-40% off</span></p>
+        <div class="hot-deals">
+            <div class="product-detail">
+                <p>hot deals for you</p>
+            </div>
+            <div class="card4" style="width: 12rem;" onclick="expandCard('product1')">
+                <img src="../assets/product1.jpg" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">Inalsa Air Fryer Fry-<br>Light-1400W<br><i
+                            class="fa-solid fa-indian-rupee-sign"></i>4,627.00 <span>-40% off</span></p>
+                </div>
+            </div>
+
+            <div class="card1" style="width: 12rem;" onclick="expandCard('product2')">
+                <img src="../assets/product2.jpg" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">Boat Z2 Bluethooth<br>wirless<br><i
+                            class="fa-solid fa-indian-rupee-sign"></i>999.00 <span>-45% off</span></p>
+                </div>
+            </div>
+            <div class="card2" style="width: 12rem;" onclick="expandCard('product3')">
+                <img src="../assets/product3.jpg" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">Mi Y11 Pro<br>Gray color<br><i
+                            class="fa-solid fa-indian-rupee-sign"></i>14999.00
+                        <span>-32% off
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="card3" style="width: 12rem;" onclick="expandCard('product4')">
+                <img src="../assets/product4.jpg" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">Fastrack Revoltt X<br>46.4mm HD Display<br><i
+                            class="fa-solid fa-indian-rupee-sign"></i>1299.00 <span>-47% off</span></p>
+                </div>
             </div>
         </div>
 
-        <div class="card1" style="width: 12rem;" onclick="expandCard('product2')">
-            <img src="../assets/product2.jpg" class="card-img-top">
-            <div class="card-body">
-                <p class="card-text">Boat Z2 Bluethooth<br>wirless<br><i
-                        class="fa-solid fa-indian-rupee-sign"></i>999.00 <span>-45% off</span></p>
-            </div>
-        </div>
-        <div class="card2" style="width: 12rem;">
-            <img src="../assets/product3.jpg" class="card-img-top">
-            <div class="card-body">
-                <p class="card-text">Mi Y11 Pro<br>Gray color<br><i class="fa-solid fa-indian-rupee-sign"></i>14999.00
-                    <span>-32% off
-                    </span>
-                </p>
-            </div>
-        </div>
-        <div class="card3" style="width: 12rem;">
-            <img src="../assets/product4.jpg" class="card-img-top">
-            <div class="card-body">
-                <p class="card-text">Fastrack Revoltt X<br>46.4mm HD Display<br><i
-                        class="fa-solid fa-indian-rupee-sign"></i>1299.00 <span>-47% off</span></p>
-            </div>
-        </div>
-        <div class="second-product">
-            <p>Today's hot deals </p>
-        </div>
-        <div class="second-product-list">
-            <div class="card5" style="width: 12rem;">
-                <img src="../assets/product5.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">EVOFOX Blaze<br>2800 DPI <br>USB 2.0 <span>-22% off</span><br>
-                    <p class="add-cart">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>621.00 <button>Add to cart</button>
-                    </p>
-                    </p>
+        <div class="today-deals">
+            <p class="today-news">Today's hot deals </p>
+
+            <div class="second-product-list">
+                <div class="card5" style="width: 12rem;" onclick="expandCard('product5')">
+                    <img src="../assets/product5.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">EVOFOX Blaze<br>2800 DPI <br>USB 2.0 <span>-22% off</span><br>
+                        <p class="add-cart">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>621.00 <button>Add to cart</button>
+                        </p>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="card6" style="width: 12rem;">
-                <img src="../assets/product6.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">NIKON Z 50 Mirrorless Camera,16-50mm Lens <span>-40% off</span>
-                    <p class="add-cart">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>9599.00 <button>Add to cart</button>
-                    </p>
-                    </p>
+                <div class="card6" style="width: 12rem;" onclick="expandCard('product6')">
+                    <img src="../assets/product6.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">NIKON Z 50 Mirrorless Camera,16-50mm Lens <span>-40% off</span>
+                        <p class="add-cart">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>9599.00 <button>Add to cart</button>
+                        </p>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="card7" style="width: 12rem;">
-                <img src="../assets/product7.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">RUNMUS K11 <br>Red color<span>-30% off</span>
-                    <p class="add-cart">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>735.00 <button>Add to cart</button>
-                    </p>
-                    </p>
+                <div class="card7" style="width: 12rem;" onclick="expandCard('product7')">
+                    <img src="../assets/product7.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">RUNMUS K11 <br>Red color<span>-30% off</span>
+                        <p class="add-cart">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>735.00 <button>Add to cart</button>
+                        </p>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="card8" style="width: 12rem;">
-                <img src="../assets/product8.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">Realme Buds Air 6 Pro<br>50dB ANC<span>-77% off</span>
-                    <p class="add-cart">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>1923.00 <button>Add to cart</button>
-                    </p>
-                    </p>
+                <div class="card8" style="width: 12rem;" onclick="expandCard('product8')">
+                    <img src="../assets/product8.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">Realme Buds Air 6 Pro<br>50dB ANC<span>-77% off</span>
+                        <p class="add-cart">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>1923.00 <button>Add to cart</button>
+                        </p>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="card9" style="width: 12rem;">
-                <img src="../assets/product9.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">SONY Ps4 Slim Console 500 GB<br>Black color<span>-25% off</span>
-                    <p class="add-cart">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>21000.00 <button>Add to cart</button>
-                    </p>
-                    </p>
+                <div class="card9" style="width: 12rem;" onclick="expandCard('product9')">
+                    <img src="../assets/product9.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">SONY Ps4 Slim Console 500 GB<br>Black color<span>-25% off</span>
+                        <p class="add-cart">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>21000.00 <button>Add to cart</button>
+                        </p>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="card10" style="width: 12rem;">
-                <img src="../assets/product10.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">SanDisk Cruzer Blade <br> USB 2.0 <br>32 GB <span>-19%off/span>
-                            <p class="add-cart">
-                                <i class="fa-solid fa-indian-rupee-sign"></i><span>495.00</span> <button>Add to
-                                    cart</button>
-                            </p>
-                    </p>
+                <div class="card10" style="width: 12rem;" onclick="expandCard('product10')">
+                    <img src="../assets/product10.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">SanDisk Cruzer Blade <br> USB 2.0 <br>32 GB <span>-19%off/span>
+                                <p class="add-cart">
+                                    <i class="fa-solid fa-indian-rupee-sign"></i><span>495.00</span> <button>Add to
+                                        cart</button>
+                                </p>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="card11" style="width: 12rem;">
-                <img src="../assets/product11.jpg" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">ASUS Vivobook 15<br>Intel Core i5 <br>12th Gen 1235U<span>-38% off</span>
-                    <p class="add-cart">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>42990.00 <button>Add to cart</button>
-                    </p>
-                    </p>
+                <div class="card11" style="width: 12rem;" onclick="expandCard('product11')">
+                    <img src="../assets/product11.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">ASUS Vivobook 15<br>Intel Core i5 <br>12th Gen 1235U<span>-38% off</span>
+                        <p class="add-cart">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>42990.00 <button>Add to cart</button>
+                        </p>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,51 +214,53 @@
                         </p>
                     </div>
                 </div>
-             
-            </div>   
+
+            </div>
         </div>
-       
+
         <div id="expanded-card" class="expanded-card hidden">
-           
+
             <div class="popup-black"></div>
             <div class="expanded-details">
-            <button class="home-btn1" onclick = "closeCard()">Home/</button>
-                    <a href=""><button class="home-btn2"> <b>Your Cart</b> </button></a>
-            <h3 id="expanded-title"></h3>
+                <button class="home-btn1" onclick="closeCard()">Home/</button>
+                <a href=""><button class="home-btn2"> <b>Your Cart</b> </button></a>
+                <h3 id="expanded-title"></h3>
                 <p id="expanded-description"></p>
                 <p>Rating:
                     <span>⭐⭐⭐⭐☆</span> (4.0)
                 </p>
                 <h4 id="expanded-price"></h4>
-            <button class="close-btn" onclick="closeCard()">X</button>
-            <img id="expanded-img" src="" alt="Expanded Product" />                
+                <button class="close-btn" onclick="closeCard()">X</button>
+                <img id="expanded-img" src="" alt="Expanded Product" />
                 <div class="color-options">
-                        <label class="lable">Color: <span>Black</span> </label>
-                        <div class="colors-div">
-                            <p class="color1"></p>
-                            <p class="color2"></p>
-                            <p class="color3"></p>
-                            <p class="color4"></p>
-                        </div>
+                    <label class="lable">Color: <span>Black</span> </label>
+                    <div class="colors-div">
+                        <p class="color1"></p>
+                        <p class="color2"></p>
+                        <p class="color3"></p>
+                        <p class="color4"></p>
+                    </div>
 
+                </div>
+                <input type="number" placeholder="Quantity">
+                <a href="checkoutpage.html"><button class="cart-btn">Add to cart</button></a>
+                <div class="share-btn">
+                    <ul>
+                        <li>Compare</li>
+                        <li><i class="fa-solid fa-message"></i>Ask a question</li>
+                        <li><i class="fa-solid fa-share-nodes"></i>Share</li>
+                    </ul>
+                </div>
+                <div id="order-detail">
+                    <div class="order-date"><i class="fa-solid fa-truck"></i> Estimate Delivery: Jul 30 - Aug 5</div>
+                    <div class="Shopping"><i class="fa-solid fa-box"></i> Free Shopping & Returns: On all orders over
+                        $75</div>
+                </div>
             </div>
-            <input type="number" placeholder="Quantity">
-            <a href="checkoutpage.html"><button class="cart-btn">Add to cart</button></a>
-            <div class="share-btn">
-                <ul>
-                    <li>Compare</li>
-                    <li><i class="fa-solid fa-message"></i>Ask a question</li>
-                    <li><i class="fa-solid fa-share-nodes"></i>Share</li>
-                </ul>
-            </div>
-            <h4><i class="fa-solid fa-truck"></i> Estimate Delivery: <span>Jul 30 - Aug 5</span></h4>
-            <h4><i class="fa-solid fa-box"></i> Free Shopping & Returns: <span>On all orders over $75</span>
-            </h4>
-        </div>
         </div>
     </div>
 
-  
+
     </div>
     <footer>
         <h4 class="foot-one">Shop<span>cart</span> </h4>
@@ -323,7 +330,62 @@
                 description: 'This is the full description of Product 1. It is a high-quality product with great features.',
                 price: '₹999.00',
             },
+            product3: {
+                img: '../assets/product3.jpg',
+                title: 'Product 3',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹999.00',
+            },
+            product4: {
+                img: '../assets/product4.jpg',
+                title: 'Product 4',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹999.00',
+            },
+            product5: {
+                img: '../assets/product5.jpg',
+                title: 'Product 5',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹999.00',
+            },
+            product6: {
+                img: '../assets/product6.jpg',
+                title: 'Product 4',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹999.00',
+            },
+            product7: {
+                img: '../assets/product7.jpg',
+                title: 'Product 4',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹999.00',
+            },
+            product8: {
+                img: '../assets/product8.jpg',
+                title: 'Product 4',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹999.00',
+            },
+            product9: {
+                img: '../assets/product9.jpg',
+                title: 'Product 4',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹999.00',
+            },
+            product10: {
+                img: '../assets/product10.jpg',
+                title: 'Product 4',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹999.00',
+            },
+            product11: {
+                img: '../assets/product11.jpg',
+                title: 'Product 4',
+                description: 'This is the full description of Product 1. It is a high-quality product with great features.',
+                price: '₹999.00',
+            },
         };
+
 
         function expandCard(productId) {
             const expandedCard = document.getElementById('expanded-card');
@@ -335,7 +397,7 @@
             document.getElementById('expanded-price').textContent = product.price;
             document.getElementsByClassName("review")[0].style.display = "none";
             var exp = document.getElementById('expanded-card');
-            exp.innerHTML +=  `<div class="first-left"><img src="../assets/${productId}.jpg" alt="" width="70px" height="80px" class="first-img">
+            exp.innerHTML += `<div class="first-left"><img src="../assets/${productId}.jpg" alt="" width="70px" height="80px" class="first-img">
                 <img src="../assets/thumbs/${productId}_1.jpg" alt="" width="70px" height="80px">
                 <img src="../assets/thumbs/${productId}_2.jpg" alt="" width="70px" height="80px">
                 <img src="../assets/thumbs/${productId}_3.jpg" alt="" width="70px" height="80px">

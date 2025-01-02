@@ -49,6 +49,14 @@ h4 span{
     padding: 5px;
 }
 
+.search-bar i{
+    position: absolute;
+    top: 8%;
+    font-size: 20px;
+    margin-left: 30%;
+    
+}
+
 .user{
     margin-top: 10px;
     font-weight: bold;
@@ -414,7 +422,8 @@ h6 .rate3{
 
 .expanded-details h4{
     font-size: 16px;
-    margin-top: 15px;
+    position: absolute;
+    bottom: 0vh;
 }
 
 .expanded-details h4 i{

@@ -83,6 +83,14 @@ span i{
     bottom: 88%;
 }
 
+.search-bar i{
+    position: absolute;
+    left: 94%;
+    bottom: 89%;
+    font-size: 20px;
+    
+}
+
 .right-side{
     position: absolute;
     left: 90%;
@@ -137,7 +145,7 @@ nav ul li {
     
 }
 
-.hot-deals h4 {
+.main h4 {
     color: #444;
     margin-left: 8px;
     margin-bottom: 10px;
@@ -147,7 +155,7 @@ nav ul li {
     bottom: 65%;
 }
 
-.hot-deals h4 span{
+.main h4 span{
     color: #e39b1e;
     font-weight: bold;
 
@@ -229,8 +237,9 @@ nav ul li {
 }
 
 .card4{
-    margin-left: 46%;
-    margin-top:25px ;
+    position: relative;
+    left: 95vh;
+    top: 10.5vh;
 }
 
 .card4 .card-text{
@@ -245,13 +254,14 @@ nav ul li {
     font-size: smaller;
 }
 
-.second-product p{
+
+.today-deals .today-news{
     font-weight: bold;
     font-size: 25px;
     border-bottom: dashed #e39b1e;   
 }
 
-.second-product{
+.today-deals{
     margin-top: 50px;
     margin-left: 10px;
     
@@ -275,20 +285,29 @@ nav ul li {
     padding-bottom: 1px;
     margin-left: 5px;
     display: inline-block;
-
+    font-size: 13px;
+    border: none;
 }
 
+ .card-body .add-cart{
+    border: none;
+}
+
+.card-body{
+    border: none;
+}
 .add-cart button{
     background-color: #e39b1e;
     color: black;
     border-radius: 8px;
-    border: none;
     font-size: smaller;
-   
+    border: none;
+    font-size: 12px;
 }
  
 .card5 .card-text{
     margin: 5px;
+    
 }
 
 .card6{
@@ -521,13 +540,22 @@ nav ul li {
 .expanded-details .cart-btn{
     position: absolute;
     right: 5%;
-    bottom: 22.9%;
+    bottom: 26.5%;
     padding: 5px 20px ;
     background-color: orange;
     border-radius: 7.5px;
     
 }
 
+#expanded-price{
+    font-weight: 600;
+    margin-bottom: 12%;
+
+}
+
+#order-detail {
+    margin-top: 10px;
+}
 .first-left {
     display: flex;
     flex-direction: column;
