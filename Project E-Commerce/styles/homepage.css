@@ -227,18 +227,17 @@ nav ul li {
 .card3 .card-text{
     margin-left: 10px;
 }
-
-.card4{
+#card4{
     margin-left: 46%;
     margin-top:25px ;
 }
 
-.card4 .card-text{
+#card4 .card-text{
     margin-left: 20px;
 
 }
 
-.card-text span{
+#card-text span{
     color: red;
     background-color: aliceblue;
     margin-left: 8px;

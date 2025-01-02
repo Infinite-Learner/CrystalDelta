@@ -10,7 +10,7 @@ const getProducts = (req, res) => {
     if (products.length === 0) {
       return res.status(404).json({ message: "No products found" });
     }
-    res.status(200).json(products);
+    res.status(200).json({products:products});
   });
 };
 
@@ -25,7 +25,7 @@ const getProduct = (req, res) => {
     if (result.length === 0) {
       return res.status(404).json({ message: `Product with ID ${id} not found` });
     }
-    res.status(200).json(result[0]);
+    res.status(200).json({products:result[0]});
   });
 };
 
@@ -40,7 +40,7 @@ const getProductsByCategory = (req, res) => {
     if (result.length === 0) {
       return res.status(404).json({ message: `No products found for category ${category}` });
     }
-    res.status(200).json(result);
+    res.status(200).json({products:result});
   });
 };
 
