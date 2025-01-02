@@ -7,7 +7,7 @@ Product_Description VARCHAR(255) NOT NULL,
 Product_Specifications VARCHAR(255) NOT NULL,
 Product_Ratings FLOAT  NOT NULL,
 Product_Images VARCHAR(255) NOT NULL,
-Product_Catogory VARCHAR(255) NOT NULL,
+Product_Category VARCHAR(255) NOT NULL,
 Product_Quantity INT NOT NULL,
 PRIMARY KEY(Product_ID)
 );

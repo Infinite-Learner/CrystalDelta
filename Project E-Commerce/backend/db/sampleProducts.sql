@@ -8,7 +8,7 @@ INSERT INTO DRCART.DRCART_PRODUCTS
 `Product_Specifications`,
 `Product_Ratings`,
 `Product_Images`,
-`Product_Catogory`,
+`Product_Category`,
 `Product_Quantity`
 )
 VALUES
