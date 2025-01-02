@@ -1,0 +1,26 @@
+INSERT INTO DRCART.DRCART_PRODUCTS
+(
+Product_Id,
+Product_Name,
+Product_Price,
+Product_Discount,
+Product_Description,
+Product_Specifications,
+Product_Ratings,
+Product_Images,
+Product_Catogory,
+Product_Quantity
+)
+VALUES
+(),
+(),
+(),
+(),
+(),
+(),
+(),
+(),
+(),
+(),
+(),
+();
