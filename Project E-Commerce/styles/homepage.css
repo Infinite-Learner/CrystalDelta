@@ -50,8 +50,12 @@ h4 span{
 }
 
 .user{
-    margin-top: 10px;
+    margin-top: 5px;
     font-weight: bold;
+}
+
+.user #btnuser-profile-btn{
+    position: absolute;
 }
 
 .user a{
@@ -66,44 +70,33 @@ h4 span{
 span i{
     color: black;
 }
-.search-bar {
-    /* margin: 20px 0px 26px 0px ; */
-    margin-bottom:45px ;
-   
-}
 
 .search-bar input {
-    width: 265%;
-    padding: 10px;
+    width: 27%;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
     border-radius: 10px;
-    position: relative;
-    right: 175%;
-    bottom: 100%;
-}
-
-.search-bar i{
     position: absolute;
-    bottom: 46%;
-    left: 64%;
-    color: gray;
+    left: 70%;
+    bottom: 88%;
 }
-
 
 .right-side{
     position: absolute;
     left: 90%;
-    bottom: 82.5%;   
+    bottom: 84%;   
     float: right;
 }
 .user{
     display: flex;
     position: relative;
-    right:50px;
+    right: 50px;
+    bottom:90%;
+    
 }
-.user #user-profile-btn
+.user #user-profile-btn,#logout-button
 {
     color:white;
     background: orange;
@@ -111,7 +104,7 @@ span i{
     border-radius: 4px;
     padding: 1px 1px 1px 1px;
     display: flex;
-    margin-top: 80px;
+    margin-bottom: 80px;
     text-decoration: none;
 
 }
@@ -180,14 +173,6 @@ nav ul li {
     position: absolute;
     top: 40%;
 }
-
-/* 
-footer {
-    background-color: #444;
-    color: white;
-    padding: 10px;
-    text-align: center;
-} */
 
 .product-detail{
     font-weight: bold;
@@ -305,11 +290,6 @@ footer {
 .card5 .card-text{
     margin: 5px;
 }
-
-/* .card5:hover{
-    width: 13rem;
-    height: fit-content;
-} */
 
 .card6{
     border: 2px solid aliceblue;
@@ -471,34 +451,132 @@ footer {
     z-index: 1000; /* Ensure the navbar stays above other content */
 }
 
-/* Style for the expanded product details */
-#expanded-card {
+.expanded-card {
     position: absolute;
     top: 19%;
     right: 0;
     width: 40%;
-    height: 70% ;
+    height: 110%;
+    background-color: white;
+    z-index: 9999;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    color:black;
+    border: 1px solid black;
 }
-
-#expanded-card.hidden {
+.expanded-card.hidden {
     display: none;
 }
-
-#expanded-img{
-    width: 40%;
-    height: 60%;
-    border-radius: 5px;
+.expanded-details{
+    margin-left: 14%;
+    margin-top: 10px;
 }
 
-#expanded-card.visible {
-    display: block;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 1;
+.expanded-details .close-btn{
+    position: absolute;
+    right: 4%;
+    top: 2%;
 }
 
+.expanded-details input{
+    width: 20%;
+}
+
+#expanded-title{
+    margin-top: 10px;
+}
+
+.expanded-details h4 i{
+    color: #000;
+}
+
+.expanded-details h4{
+    font-size: medium;
+    margin-top: 10px;
+}
+
+.expanded-details .cart-btn{
+    position: absolute;
+    right: 5%;
+    bottom: 18.5%;
+    padding: 5px 20px ;
+    background-color: orange;
+    border-radius: 7.5px;
+    
+}
+
+.first-left {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    left: 1%;
+    gap: 10px;
+    top: 2%
+}
+
+
+
+.expanded-content {
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+ #expanded-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+}
+
+
+.colors-div{
+    display: flex;
+    gap: 7px;
+}
+
+.colors-div .color1{
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.colors-div .color2{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.colors-div .color3{
+    background-color: blueviolet;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.colors-div .color4{
+    background-color: gray;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.share-btn{
+    background-color: aliceblue;
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.share-btn ul{
+    margin: 0px;
+    display: inline-block;
+    gap: 20px;
+}
 
 /* Footer */
 
@@ -536,28 +614,4 @@ ul{
 .footer-content {
     display: inline-block;
     margin-left: 55vh;
-}
-
-
-
-.country-select {
-    padding: 10px;
-    font-size: 16px;
-   
-    border: none;
-    cursor: pointer;
-    background-color: #444;
-    color: #ffffff;
-}
-
-/* Add additional styling for hover and focus */
-.country-select:hover,
-.country-select:focus {
-    
-    outline: none;
-}
-
-/* Adjust select width dynamically */
-.country-select option {
-    padding: 5px;
 }
