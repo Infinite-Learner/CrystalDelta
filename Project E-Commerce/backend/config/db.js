@@ -26,7 +26,6 @@ db.connect((err) => {
 const sqlFiles = [
   "products.sql",
   "usertable.sql",
-  "Orders.sql",
   "OrderedItems.sql"
 ];
 if (process.env.TABLES_EXISTS == "false") {
@@ -62,7 +61,7 @@ if (process.env.TABLES_EXISTS == "false") {
     }
        if(process.env.SAMPLE_DATA == "false"){
               count = 0;
-              insertData = ['sampleUsers.sql'];
+              insertData = ['sampleUsers.sql','sampleProducts.sql'];
               insertData.forEach(file => {
                 let sqlFilePath = path.join(__dirname, "../db", file);
                 fs.readFile(sqlFilePath, "utf8", (err, sql) => {
