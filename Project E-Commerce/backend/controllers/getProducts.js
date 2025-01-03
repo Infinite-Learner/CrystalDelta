@@ -16,16 +16,16 @@ const getProducts = (req, res) => {
 
 // Get a specific product by ID
 const getProduct = (req, res) => {
-  const { id } = req.params;
-  db.query("SELECT * FROM DRCART.DRCART_PRODUCTS WHERE product_id = ?", [id], (error, result) => {
+  const { name } = req.params;
+  db.query("SELECT * FROM DRCART.DRCART_PRODUCTS WHERE product_name LIKE ?", [`%${name}%`], (error, result) => {
     if (error) {
-      console.log('Error fetching product by ID:', error);
+      console.log('Error fetching product by name:', error);
       return res.status(500).json({ message: "Internal server error" });
     }
     if (result.length === 0) {
-      return res.status(404).json({ message: `Product with ID ${id} not found` });
+      return res.status(404).json({ message: `Product with name ${name} not found` });
     }
-    res.status(200).json({products:result[0]});
+    res.status(200).json({products:result});
   });
 };
 

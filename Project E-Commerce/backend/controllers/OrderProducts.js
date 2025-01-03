@@ -80,5 +80,14 @@ const OrderProducts = (req, res) => {
     });
   });
 };
-
-module.exports = { OrderProducts };
+const getOrders = (req,res) =>{
+  const Id  =  req.params['id'];
+  db.query("SELECT * FROM `drcart`.`drcart_orderItems` WHERE user_id = ?",[Id],(err,rows)=>{
+    if(err){
+      console.log(err);
+      return  res.status(500).json({message:"Error getting orders"}); 
+    }
+    return res.status(200).json({orders:rows});
+  });
+};
+module.exports = { OrderProducts , getOrders};
