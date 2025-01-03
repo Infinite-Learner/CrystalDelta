@@ -1,4 +1,4 @@
-const { logout } = require('./authController');
+const { logout } = require('../controllers/authController');
 
 describe('Logout Function', () => {
   it('should destroy session and respond with success', async () => {

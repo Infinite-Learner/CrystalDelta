@@ -1,4 +1,4 @@
-const { getProduct } = require('./productsController');
+const { getProduct } = require('../controllers/getProduct');
 
 describe('getProduct Function', () => {
   it('should return the product by name', async () => {

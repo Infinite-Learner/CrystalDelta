@@ -1,4 +1,4 @@
-const { getProducts } = require('./productsController');
+const { getProducts } = require('../controllers/getProducts');
 
 describe('getProducts Function', () => {
   it('should return all products', async () => {

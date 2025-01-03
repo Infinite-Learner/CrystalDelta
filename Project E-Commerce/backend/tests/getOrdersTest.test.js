@@ -1,5 +1,5 @@
 
-  const { getOrders } = require('./orderController');
+  const { getOrders } = require('../controllers/OrderProducts');
 
   describe('getOrders Function', () => {
     it('should return user orders successfully', async () => {
