@@ -56,11 +56,8 @@
     </nav>
 
     <div class="container">
-        <div class="first-left">
-            <img src="../assets/product2.jpg" alt="" width="80px" height="90px" class="first-img">
-            <img src="../assets/comp2(1).jpg" alt="" width="80px" height="90px">
-            <img src="../assets/comp2(2).jpg" alt="" width="80px" height="90px">
-            <img src="../assets/comp2(3).jpg" alt="" width="80px" height="90px">
+        <div class="first-left" id='firstleft'>
+           
         </div>
         <div class="leftside">
             <div id="expanded-card" class="expanded-card hidden">
@@ -73,12 +70,8 @@
                         <h3 id="expanded-title"></h3>
                         <p id="expanded-description"></p>
                         <h4 id="expanded-price"></h4>
-                        <div class="rating">
-                            <p >The Boat Rockerz Z2 delivers powerful sound, seamless Bluetooth connectivity.</p>
-                            <p>Rating:
-                                <span>⭐⭐⭐⭐☆</span> (4.0)
-                            </p>
-                            <img id="expanded-img" src="../assets/product2.jpg" alt="Expanded Product" />
+                        <div class="rating" id="ratings">
+                            
                         </div>
 
                         <div class="color-options">
@@ -89,7 +82,7 @@
                                 <p class="color3"></p>
                                 <p class="color4"></p>
                             </div>
-                            <input type="number" placeholder="Quantity">
+                            Qunatity<input type="number" placeholder="1" id ='quantity' min = "1" value="" onchange="quantityChange()">
 
                         </div>
                         <div class="share-btn">
@@ -109,8 +102,8 @@
             </div>
 
             <div class="main-top">
-                <div class="topside">
-                    <img src="../assets/product2.jpg" alt="" width="75px" height="60px">
+                <div class="topside" id="topside">
+                    <img id ='tsimg' src="../assets/product2.jpg" alt="" width="75px" height="60px">
                     <ul>
                         <li>Tray Table</li>
                         <li>Color:Black</li>
@@ -118,9 +111,9 @@
                     </ul>
 
 
-                    <input type="number" placeholder="Add">
-                    <p class="price-amount"><i class="fa-solid fa-indian-rupee-sign"></i>999.00</p>
-                    <p class="price-amount1"><i class="fa-solid fa-indian-rupee-sign"></i>1998.00</p>
+                    <input type="number" placeholder="1" id = 'addquantity' disabled='true' width="30px">
+                    <p class="price-amount" id="price"><i class="fa-solid fa-indian-rupee-sign"></i>999.00</p>
+                    <p class="price-amount1" id ='tprice'><i class="fa-solid fa-indian-rupee-sign"></i>1998.00</p>
                 </div>
             </div>
             <div class="rightside">
@@ -138,9 +131,9 @@
                 <h6><input type="radio" name="ravi"> Free Shopping <span class="rate1"> 0.0</span> <br></h6>
                 <h6><input type="radio" name="ravi"> Express Shopping <span class="rate2">15.0</span><br></h6>
                 <h6><input type="radio" name="ravi"> Pickup <span class="rate3">%21</span> <br></h6>
-                <h5>Subtotal <span>1998.00</span></h5>
+                <h5 id = 'sub-total'>Subtotal <span>-</span></h5>
                 <hr>
-                <h3>Total <span>1998.00</span></h3>
+                <h3 id = 'total'>Total <span>-</span></h3>
                 <button class="checkout">Checkout</button>
 
                 <div class="coupon">
@@ -176,7 +169,17 @@
         </footer>
 
         <script>
-
+            function quantityChange() {
+                document.getElementById("quantity").addEventListener("change", function () {
+                    window.localStorage.setItem('quantity', parseFloat(this.value));
+                    const quantity = window.localStorage.getItem('quantity');
+                            var total_cost = quantity * window.localStorage.getItem('productPrice').slice(1);
+                            const tprice = document.getElementById('tprice').innerHTML = `₹${total_cost}.00`;
+                            document.getElementById('sub-total').innerHTML = `Subtotal <span>₹${total_cost}.00</span>`;
+                            document.getElementById('total').innerHTML = `Total <span>₹${total_cost}.00</span>`;
+                            document.getElementById('addquantity').value = quantity;
+                });
+            }
             function checkUserProfile() {
                 const username = localStorage.getItem('username');
                 if (username) {
@@ -189,10 +192,29 @@
                     document.getElementById('user-profile').innerHTML = 'to Shop';
                     document.getElementById('logout-button').style.display = 'none';
                 }
+                imageRender();
             }
             function goToHomePage() {
                 window.location.href = 'home';
             }
+            function imageRender() {
+                const id = window.localStorage.getItem('productId');
+                var imgs =  document.getElementById('firstleft');
+                var top = document.getElementById('tsimg'); 
+                top.src = "../assets/"+id+".jpg";
+                imgs.innerHTML+=` <img src="../assets/${id}.jpg" alt="" width="80px" height="90px" class="first-img">
+            <img src="../assets/thumbs/${id}_1.jpg" alt="" width="80px" height="90px">
+            <img src="../assets/thumbs/${id}_2.jpg" alt="" width="80px" height="90px">
+            <img src="../assets/thumbs/${id}_3.jpg" alt="" width="80px" height="90px">`;
+            const products = document.getElementById('ratings');
+            products.innerHTML = `<p >${window.localStorage.getItem('productName')}<br>${window.localStorage.getItem('productDescription')}<br></p>
+                            <p>Rating:
+                                <span>⭐⭐⭐⭐☆</span> (4.0).
+                            </p>
+                            <img id="expanded-img" src="../assets/${window.localStorage.getItem('productId')}.jpg" alt="Expanded Product" />`;
+                            const price = document.getElementById('price');
+                            price.textContent = `${window.localStorage.getItem('productPrice')}`;
+                        }
             window.onload = checkUserProfile;
 
 

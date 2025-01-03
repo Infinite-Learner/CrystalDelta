@@ -243,7 +243,7 @@
 
                 </div>
                 <input type="number" placeholder="Quantity">
-                <a href="checkoutpage.html"><button class="cart-btn">Add to cart</button></a>
+                    <button class="cart-btn" onclick="loadCheckout()">Add to cart</button>
                 <div class="share-btn">
                     <ul>
                         <li>Compare</li>
@@ -281,7 +281,6 @@
         </div>
     </footer>
     <script>
-
         function checkUserProfile() {
             const username = localStorage.getItem('username');
             if (username) {
@@ -294,6 +293,7 @@
                 document.getElementById('user-profile').innerHTML = 'to Shop';
                 document.getElementById('logout-button').style.display = 'none';
             }
+            
         }
         function goToLoginPage() {
             window.location.href = 'login';
@@ -315,8 +315,37 @@
                 })
                 .catch(error => console.error('Error:', error));
         }
-        window.onload = checkUserProfile;
+        async function fetchProducts() {
+            try {
+                const response = await fetch('/api/getProducts/products');
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+                const products = await response.json(products);
+                const productContainer = document.getElementById('product-list');
 
+                // Clear existing content
+                productContainer.innerHTML = '';
+
+                // Populate products
+                products.forEach(product => {
+                    const productItem = document.createElement('div');
+                    productItem.className = 'product-item';
+                    productItem.innerHTML = `
+                        <h3>${product.name}</h3>
+                        <p>Price: $${product.price}</p>
+                    `;
+                    productContainer.appendChild(productItem);
+                });
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        }
+
+       
+        function loadCheckout(){
+            window.location.href = 'checkoutpage.html';
+        }
         const productData = {
             product1: {
                 img: '../assets/product1.jpg',
@@ -385,8 +414,6 @@
                 price: '₹42990.00',
             },
         };
-
-
         function expandCard(productId) {
             const expandedCard = document.getElementById('expanded-card');
             const product = productData[productId];
@@ -397,6 +424,11 @@
             document.getElementById('expanded-price').textContent = product.price;
             document.getElementsByClassName("review")[0].style.display = "none";
             var exp = document.getElementById('expanded-card');
+            window.localStorage.setItem("productId", productId);
+            window.localStorage.setItem("productName", product.title);
+            window.localStorage.setItem("productPrice", product.price);
+            window.localStorage.setItem("productDescription", product.description);
+            window.localStorage.setItem("productImg", product.img);
             exp.innerHTML += `<div class="first-left"><img src="../assets/${productId}.jpg" alt="" width="70px" height="80px" class="first-img">
                 <img src="../assets/thumbs/${productId}_1.jpg" alt="" width="70px" height="80px">
                 <img src="../assets/thumbs/${productId}_2.jpg" alt="" width="70px" height="80px">

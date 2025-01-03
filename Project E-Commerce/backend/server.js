@@ -27,8 +27,10 @@ app.get('/login', (req, res) => {get
 app.get('/signup', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/signuppage.html'));
 });
-app.get('getProducts/products',(req,res)=>{});
-app.get('Order/orders', (req, res) => {
+app.get('/getProducts/products',(req,res)=>{
+  res.sendFile(path.join(__dirname),'../frontend/homepage.html')
+});
+app.get('/Order/orders', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/orders.html'));
 });
 app.get('/orders/:id', (req, res) => {
