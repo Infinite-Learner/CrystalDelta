@@ -22,7 +22,7 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-        run: npm install --prefix CrystalDelta/Project\ E-Commerce/backend
+        run: npm install --prefix /Project\ E-Commerce/backend
 
       - name: Run Backend Tests
-        run: npm test --prefix CrystalDelta/Project\ E-Commerce/backend # Ensure that tests are in the backend directory
+        run: npm test --prefix /Project\ E-Commerce/backend # Ensure that tests are in the backend directory
