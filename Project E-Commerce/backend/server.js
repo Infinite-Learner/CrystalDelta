@@ -21,20 +21,23 @@ app.use('/assets', express.static(path.join(__dirname, '../assets')));
 app.get(['/home','/'], (req, res) => {
   res.sendFile(path.join(__dirname,'../frontend','homepage.html'));
 });
-app.get('/login', (req, res) => {get
+app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/loginpage.html'));
 });
 app.get('/signup', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/signuppage.html'));
 });
+app.get('/orders', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/orders.html'));
+});
 app.get('/getProducts/products',(req,res)=>{
   res.sendFile(path.join(__dirname),'../frontend/homepage.html')
 });
-app.get('/Order/orders', (req, res) => {
+app.get('/orders/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/orders.html'));
 });
 app.get('/orders/:id', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/order-products.html'));
+  res.sendFile(path.join(__dirname, '../frontend/orders.html'));
 });
 const authRoutes = require('./routes/auth');
 const orderRoutes = require('./routes/OrdersRoute');

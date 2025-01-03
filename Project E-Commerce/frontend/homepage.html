@@ -68,7 +68,7 @@
             <div class="product-detail">
                 <p>hot deals for you</p>
             </div>
-            <div class="card4" style="width: 12rem;" onclick="expandCard('product1')">
+            <div class="card1" style="width: 12rem;" onclick="expandCard('product1')">
                 <img src="../assets/product1.jpg" class="card-img-top">
                 <div class="card-body">
                     <p class="card-text">Inalsa Air Fryer Fry-<br>Light-1400W<br><i
@@ -76,14 +76,14 @@
                 </div>
             </div>
 
-            <div class="card1" style="width: 12rem;" onclick="expandCard('product2')">
+            <div class="card2" style="width: 12rem;" onclick="expandCard('product2')">
                 <img src="../assets/product2.jpg" class="card-img-top">
                 <div class="card-body">
                     <p class="card-text">Boat Z2 Bluethooth<br>wirless<br><i
                             class="fa-solid fa-indian-rupee-sign"></i>999.00 <span>-45% off</span></p>
                 </div>
             </div>
-            <div class="card2" style="width: 12rem;" onclick="expandCard('product3')">
+            <div class="card3" style="width: 12rem;" onclick="expandCard('product3')">
                 <img src="../assets/product3.jpg" class="card-img-top">
                 <div class="card-body">
                     <p class="card-text">Mi Y11 Pro<br>Gray color<br><i
@@ -93,7 +93,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card3" style="width: 12rem;" onclick="expandCard('product4')">
+            <div class="card4" style="width: 12rem;" onclick="expandCard('product4')">
                 <img src="../assets/product4.jpg" class="card-img-top">
                 <div class="card-body">
                     <p class="card-text">Fastrack Revoltt X<br>46.4mm HD Display<br><i
@@ -283,6 +283,7 @@
     <script>
         function checkUserProfile() {
             const username = localStorage.getItem('username');
+                        fetchProducts();
             if (username) {
                 document.getElementById('logout-button').style.display = 'flex';
                 document.getElementById('user-profile').innerHTML = username;
@@ -293,7 +294,7 @@
                 document.getElementById('user-profile').innerHTML = 'to Shop';
                 document.getElementById('logout-button').style.display = 'none';
             }
-            
+
         }
         function goToLoginPage() {
             window.location.href = 'login';
@@ -315,33 +316,26 @@
                 })
                 .catch(error => console.error('Error:', error));
         }
-        async function fetchProducts() {
-            try {
-                const response = await fetch('/api/getProducts/products');
-                if (!response.ok) {
-                    throw new Error(`HTTP error: ${response.status}`);
-                }
-                const products = await response.json(products);
-                const productContainer = document.getElementById('product-list');
-
-                // Clear existing content
-                productContainer.innerHTML = '';
-
-                // Populate products
-                products.forEach(product => {
-                    const productItem = document.createElement('div');
-                    productItem.className = 'product-item';
-                    productItem.innerHTML = `
-                        <h3>${product.name}</h3>
-                        <p>Price: $${product.price}</p>
-                    `;
-                    productContainer.appendChild(productItem);
-                });
-            } catch (error) {
-                console.error('Error fetching products:', error);
-            }
+        function fetchProducts() {
+                console.log('fetching');
+                const response = fetch('/api/getProducts/products',{
+                    method:'GET',
+                    headers:{
+                        'Content-Type':'application/json'
+                    }
+                }).then(response=>response.json()).then(data=>{
+                    const products = data.products;
+                    products.forEach(element => {
+                        createProducts(element);
+                    });
+                }).catch(error=>console.log(error));
+            
         }
-
+        function createProducts(element){
+            const pd = document.createElement('div');
+            const class_name = element.Product_Category;
+            console.log(class_name);
+        }
        
         function loadCheckout(){
             window.location.href = 'checkoutpage.html';
@@ -442,7 +436,7 @@
             expandedCard.classList.add('hidden');
             document.getElementsByClassName("review")[0].style.display = "block";
         }
-
+        window.onload = checkUserProfile;
     </script>
 </body>
 

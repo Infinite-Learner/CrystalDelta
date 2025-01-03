@@ -1,10 +1,33 @@
-<html lang="en">
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/orders.css">
+    <title>Orders</title>
 </head>
 <body>
-    
+    <div class="order">
+        <div class="product-container">
+
+        </div>
+        </div>
+    <script>
+        window.onload=()=>fetch("/api/Order/orders/2",{
+                method:"GET",
+                headers:{
+                    "Content-Type":"application/json"
+            }
+        }).then(res=>res.json())
+            .then(data=>{
+                const order_details = data.orders;
+                const container = document.getElementsByClassName("product-container")[0];
+                const newContainer = document.createElement('div');
+                newContainer.class = "card4";
+                newContainer.id  = order_details[0].Product_id;
+                newContainer.innerHTML = `<img src = "../assets/${order_details[0].Product_id}.jpg">`
+                container.appendChild(newContainer);
+            }
+            );
+    </script>
 </body>
 </html>

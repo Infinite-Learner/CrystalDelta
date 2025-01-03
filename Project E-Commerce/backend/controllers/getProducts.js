@@ -2,7 +2,7 @@ const db = require("../config/db");
 
 // Get all products
 const getProducts = (req, res) => {
-  db.query("SELECT * FROM DRCART.DRCART_PRODUCTS", (error, products) => {
+  db.query("SELECT * FROM DRCART.DRCART_PRODUCTS ORDER BY ABS(`Product_Id`)", (error, products) => {
     if (error) {
       console.log('Error fetching products:', error);
       return res.status(500).json({ message: "Internal server error" });
